@@ -1,0 +1,16 @@
+{
+	"name": "radfdevchevronproject",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true,
+			"isExplicitlySet": false
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "70c07b34-c24e-464d-9fc6-6bc7dc985644",
+		"tenantId": "f90d9c9e-6c37-4f8b-b3d9-25b0c8731e7c"
+	}
+}

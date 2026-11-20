@@ -1,0 +1,19 @@
+{
+	"name": "DS_JSON_SINK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_PARQUET_DESTINATION",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "output"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,24 @@
+{
+	"name": "SCH_LOOKUP",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_LOOKUP",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 2,
+				"startTime": "2026-11-20T00:01:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
