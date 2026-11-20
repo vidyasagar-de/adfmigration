@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "radfdevchevronproject"
+		},
+		"LS_EXCEL_SOURCE_accountKey": {
+			"value": ""
+		},
+		"LS_PARQUET_DESTINATION_accountKey": {
+			"value": ""
+		},
+		"LS_SQLSERVER_DB_password": {
+			"value": ""
+		},
+		"LS_EXCEL_SOURCE_properties_typeProperties_url": {
+			"value": "https://radlsdevexcelsource.dfs.core.windows.net/"
+		},
+		"LS_PARQUET_DESTINATION_properties_typeProperties_url": {
+			"value": "https://radlsdevdestination.dfs.core.windows.net/"
+		},
+		"LS_SQLSERVER_DB_properties_typeProperties_server": {
+			"value": "PC\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_DB_properties_typeProperties_database": {
+			"value": "AdventureWorks2019"
+		},
+		"LS_SQLSERVER_DB_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/5yDVOt/data"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

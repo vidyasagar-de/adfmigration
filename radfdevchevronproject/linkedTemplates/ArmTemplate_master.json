@@ -1,0 +1,105 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "radfdevchevronproject"
+		},
+		"LS_EXCEL_SOURCE_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_SOURCE'"
+		},
+		"LS_PARQUET_DESTINATION_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PARQUET_DESTINATION'"
+		},
+		"LS_SQLSERVER_DB_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQLSERVER_DB'"
+		},
+		"LS_EXCEL_SOURCE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://radlsdevexcelsource.dfs.core.windows.net/"
+		},
+		"LS_PARQUET_DESTINATION_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://radlsdevdestination.dfs.core.windows.net/"
+		},
+		"LS_SQLSERVER_DB_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "PC\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_DB_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2019"
+		},
+		"LS_SQLSERVER_DB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/5yDVOt/data"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "radfdevchevronproject_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_EXCEL_SOURCE_accountKey": {
+						"value": "[parameters('LS_EXCEL_SOURCE_accountKey')]"
+					},
+					"LS_PARQUET_DESTINATION_accountKey": {
+						"value": "[parameters('LS_PARQUET_DESTINATION_accountKey')]"
+					},
+					"LS_SQLSERVER_DB_password": {
+						"value": "[parameters('LS_SQLSERVER_DB_password')]"
+					},
+					"LS_EXCEL_SOURCE_properties_typeProperties_url": {
+						"value": "[parameters('LS_EXCEL_SOURCE_properties_typeProperties_url')]"
+					},
+					"LS_PARQUET_DESTINATION_properties_typeProperties_url": {
+						"value": "[parameters('LS_PARQUET_DESTINATION_properties_typeProperties_url')]"
+					},
+					"RestService1_properties_typeProperties_url": {
+						"value": "[parameters('RestService1_properties_typeProperties_url')]"
+					},
+					"LS_SQLSERVER_DB_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQLSERVER_DB_properties_typeProperties_server')]"
+					},
+					"LS_SQLSERVER_DB_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQLSERVER_DB_properties_typeProperties_database')]"
+					},
+					"LS_SQLSERVER_DB_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQLSERVER_DB_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
